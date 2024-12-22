@@ -1,0 +1,11 @@
+bulletin_one:
+  title: "First Bulletin"
+  body: "This is the body of the first bulletin. It provides some information for testing purposes."
+
+bulletin_two:
+  title: "Second Bulletin"
+  body: "This is the body of the second bulletin. It's another test record with different content."
+
+bulletin_three:
+  title: "Third Bulletin"
+  body: "Here is the body for the third bulletin. This one is to ensure the tests cover all scenarios."
