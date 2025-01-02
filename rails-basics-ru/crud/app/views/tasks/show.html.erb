@@ -1,0 +1,10 @@
+<h1><%= @task.name %></h1>
+
+<p><strong>Description:</strong> <%= @task.description.presence || 'No description' %></p>
+<p><strong>Status:</strong> <%= @task.status %></p>
+<p><strong>Creator:</strong> <%= @task.creator %></p>
+<p><strong>Performer:</strong> <%= @task.performer.presence || 'Unassigned' %></p>
+<p><strong>Completed:</strong> <%= @task.completed ? 'Yes' : 'No' %></p>
+
+<%= link_to 'Edit Task', edit_task_path(@task), class: 'btn btn-secondary' %>
+<%= link_to 'Back to Tasks', tasks_path, class: 'btn btn-primary' %>
