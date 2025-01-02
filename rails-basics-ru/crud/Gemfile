@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'puma'
 gem 'rails', '~> 7.2'
+gem 'rubocop'
 gem 'sqlite3', '~> 1.4'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
@@ -22,10 +23,10 @@ gem 'stimulus-rails'
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
 gem 'cssbundling-rails'
 
-gem 'bootsnap', '>= 1.4.4', require: false
-gem 'jbuilder'
-gem 'faker'
 gem 'annotate'
+gem 'bootsnap', '>= 1.4.4', require: false
+gem 'faker'
+gem 'jbuilder'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

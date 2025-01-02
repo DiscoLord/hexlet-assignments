@@ -8,14 +8,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-10.times do |i|
-  task_index = i + 1
+10.times do |_i|
   Task.create(
     name: Faker::Lorem.sentence,
     description: Faker::Lorem.paragraph,
-    status: "new",
+    status: 'new',
     creator: Faker::Name.name,
     performer: Faker::Name.name,
-    completed: false,
+    completed: false
   )
 end
