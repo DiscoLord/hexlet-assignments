@@ -62,6 +62,8 @@ class HexletCheckTest < ActionDispatch::IntegrationTest
   test 'should destroy task' do
     delete task_url(@task)
 
+    assert_redirected_to tasks_url
+
     assert { !Task.exists? @task.id }
   end
 end

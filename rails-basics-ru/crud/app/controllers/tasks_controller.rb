@@ -59,7 +59,7 @@ class TasksController < ApplicationController
       flash[:success] = 'task was successfully deleted'
       # Выполняется новый полноценный запрос
 
-      redirect_to root_path
+      redirect_to tasks_path
     else
       flash[:failure] = 'Task cannot be deleted'
       # Отрисовывается форма создания, все параметры остаются
