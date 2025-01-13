@@ -1,0 +1,47 @@
+/ https://guides.rubyonrails.org/form_helpers.html
+= form_with model: task do |form|
+  = form.label :name
+  br
+  / Contains an array with error messages
+  / https://apidock.com/rails/ActiveModel/Errors/full_messages_for
+  - if task.errors.present?
+    = task.errors.full_messages_for(:name).join(' ')
+  = form.text_field :name
+  br
+
+  = form.label :description
+  br
+  - if task.errors.present?
+    = task.errors.full_messages_for(:description).join(' ')
+  = form.text_area :description
+  br
+
+  = form.label :status
+  br
+  - if task.errors.present?
+    = task.errors.full_messages_for(:status).join(' ')
+  = form.text_field :status
+  br
+
+  = form.label :creator
+  br
+  - if task.errors.present?
+    = task.errors.full_messages_for(:creator).join(' ')
+  = form.text_field :creator
+  br
+
+  = form.label :performer
+  br
+  - if task.errors.present?
+    = task.errors.full_messages_for(:performer).join(' ')
+  = form.text_field :performer
+  br
+
+  = form.label :completed
+  br
+  - if task.errors.present?
+    = task.errors.full_messages_for(:completed).join(' ')
+  = form.check_box :completed
+  br
+  br
+  = form.submit

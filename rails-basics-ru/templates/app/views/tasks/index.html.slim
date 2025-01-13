@@ -1,0 +1,22 @@
+h1 Tasks
+
+= link_to 'Create New Task', new_task_path, class: 'btn btn-primary'
+
+table
+  thead
+    tr
+      th Name
+      th Status
+      th Creator
+      th Completed
+      th Actions
+  tbody
+    - @tasks.each do |task|
+      tr
+        td = link_to task.name, task_path(task)
+        td = task.status
+        td = task.creator
+        td = task.completed ? 'Yes' : 'No'
+        td
+          = link_to 'Edit', edit_task_path(task), class: 'btn btn-secondary'
+          = link_to 'Delete', task_path(task), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }
