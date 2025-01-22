@@ -1,0 +1,4 @@
+= simple_form_for [@comment], url: comment_path(@comment) do |f|
+  = f.text_area :content, rows: 3, placeholder: 'Ваш комментарий'
+
+  = f.button :submit, 'Сохранить', class: 'btn btn-success mt-4 btn-block'

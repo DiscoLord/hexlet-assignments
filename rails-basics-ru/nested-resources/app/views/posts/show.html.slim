@@ -1,0 +1,28 @@
+- content_for :title do
+  = @post.title
+p
+  strong.me-2 Body:
+  = @post.body
+/ BEGIN
+h2 Comments
+ul
+  - if @post.comments.any?
+    - @post.comments.each do |comment|
+      li
+        = comment.content
+        = link_to 'Edit', edit_comment_path(comment), class: 'btn btn-sm btn-primary'
+        = link_to 'Destroy', comment_path(comment), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'link-danger'
+  - else
+    li No comments for this post.
+
+h3 Add comment
+= simple_form_for [@comment], url: post_comments_path(@post) do |f|
+  = f.text_area :content, rows: 3, placeholder: 'Введите ваш комментарий'
+
+  = f.button :submit, 'Добавить комментарий', class: 'btn btn-success mt-4 btn-block'
+/ END
+hr
+
+.d-flex
+  = link_to 'Edit', edit_post_path(@post), class: 'btn btn-outline-primary me-2'
+  = link_to 'Back', posts_path, class: 'btn btn-outline-primary'
