@@ -13,13 +13,13 @@ class PostsController < ApplicationController
   def show; end
 
   def new
-    authorize @post
     @post = Post.new
+    authorize @post
   end
 
   def create
+    authorize Post
     @post = current_user.posts.build(post_params)
-    authorize @post
 
     if @post.save
       redirect_to @post, notice: 'Пост успешно создан.'
