@@ -2,13 +2,6 @@
 
 class PostPolicy < ApplicationPolicy
   # BEGIN
-  attr_reader :user, :post
-
-  def initialize(user, post)
-    @user = user
-    @post = post
-  end
-
   def index?
     true
   end
@@ -26,7 +19,7 @@ class PostPolicy < ApplicationPolicy
   end
 
   def update?
-    user&.admin? || user&.id == post.author_id
+    user&.admin? || user&.id == record.author_id
   end
 
   def edit?
